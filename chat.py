@@ -1,19 +1,28 @@
 import os
 
-message = []
+mensagem = []
 
-name = input("Seu Nome: ")
+nome = input("Seu Nome: ")
 
 while True:
     
-    os.system('cls')#limpando terminal
+    #limpando terminal
+    os.system('cls')
 
-    if len(message) > 0:
-        for m in message:
+    if len(mensagem) > 0:
+        for m in mensagem:
             print(m['nome'], "-", m['texto'])
 
 
-            print("__________")
+    print("__________________")
 
             #obtendo texto
-            
+    texto = input("Digite a mensagem: ")
+    if texto == "fim":
+        print("Chat encerrado.")
+        break
+
+    mensagem.append({
+     "nome": nome,
+     "texto": texto
+    })
